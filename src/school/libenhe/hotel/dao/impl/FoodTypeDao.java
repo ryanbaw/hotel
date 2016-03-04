@@ -3,6 +3,7 @@ package school.libenhe.hotel.dao.impl;
 import java.util.List;
 
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import school.libenhe.hotel.dao.IFoodTypeDao;
@@ -23,8 +24,13 @@ public class FoodTypeDao implements IFoodTypeDao{
 	 */
 	@Override
 	public void add(FoodType foodtype) {
-		// TODO Auto-generated method stub
-		
+
+		String sql ="INSERT INTO foodtype(typeName) VALUES(?);";
+		try {
+			qr.update(sql, foodtype.getTypeName());
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	/* (non-Javadoc)
@@ -32,8 +38,13 @@ public class FoodTypeDao implements IFoodTypeDao{
 	 */
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+
+		String sql ="DELETE FROM foodtype WHERE id=?";
+		try {
+			qr.update(sql,id);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	/* (non-Javadoc)
@@ -41,7 +52,13 @@ public class FoodTypeDao implements IFoodTypeDao{
 	 */
 	@Override
 	public void updata(FoodType foodtype) {
-		// TODO Auto-generated method stub
+	
+		String sql ="UPDATE foodtype SET typeName=? WHERE id =?";
+		try {
+			qr.update(sql,foodtype.getTypeName(),foodtype.getId());
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 		
 	}
 
@@ -50,8 +67,13 @@ public class FoodTypeDao implements IFoodTypeDao{
 	 */
 	@Override
 	public List<FoodType> query() {
-		// TODO Auto-generated method stub
-		return null;
+
+		String sql ="SELECT * FROM foodtype";
+		try {
+			return  qr.query(sql,new BeanListHandler<FoodType>(FoodType.class));
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	/* (non-Javadoc)
