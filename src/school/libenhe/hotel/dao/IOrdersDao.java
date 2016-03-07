@@ -6,7 +6,7 @@ import school.libenhe.hotel.entity.Orders;
 import school.libenhe.hotel.utils.PageBean;
 
 /**
- * 订单接口
+ * 订单Dao接口
  * 
  * @author Li Benhe Email: libenhe919@gmail.com
  * @version 2016-3-1 下午2:43:40
