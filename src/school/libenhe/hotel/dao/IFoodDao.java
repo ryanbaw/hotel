@@ -6,7 +6,7 @@ import school.libenhe.hotel.entity.Food;
 import school.libenhe.hotel.utils.PageBean;
 
 /**
- * 菜接口
+ * 菜Dao接口
  * 
  * @author Li Benhe Email: libenhe919@gmail.com
  * @version 2016-3-1 下午2:42:35
