@@ -5,7 +5,7 @@ import java.util.List;
 import school.libenhe.hotel.entity.FoodType;
 
 /**
- * 菜种类接口
+ * 菜种类Dao接口
  * @author Li Benhe Email: libenhe919@gmail.com
  * @version 2016-3-1 下午2:42:57
  */
@@ -63,5 +63,12 @@ public interface IFoodTypeDao {
 	 */
 	List<FoodType> query(String keyword);
 	
+	/**
+	 * 获得菜系种类数
+	 * 
+	 * @author: Li Benhe Email: libenhe919@gmail.com
+	 * @version: 2016-3-7 下午5:51:00 
+	 * @return
+	 */
 	Integer getFirstType();
 }
