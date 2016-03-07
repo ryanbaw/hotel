@@ -5,7 +5,7 @@ import java.util.List;
 import school.libenhe.hotel.entity.OrderDetail;
 
 /**
- * 订单详情接口
+ * 订单详情Dao接口
  * 
  * @author Li Benhe Email: libenhe919@gmail.com
  * @version 2016-3-1 下午2:43:17
