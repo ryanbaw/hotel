@@ -5,7 +5,7 @@ import java.util.List;
 import school.libenhe.hotel.entity.DinnerTable;
 
 /**
- * 餐桌接口设计
+ * 餐桌Dao接口设计
  * 
  * @author Li Benhe Email: libenhe919@gmail.com
  * @version 2016-3-1 下午2:42:11
