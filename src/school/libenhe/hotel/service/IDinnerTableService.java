@@ -85,5 +85,5 @@ public interface IDinnerTableService {
 	 * @param id
 	 * @return
 	 */
-	DinnerTable changesState(int id);
+	DinnerTable changeState(int id);
 }
