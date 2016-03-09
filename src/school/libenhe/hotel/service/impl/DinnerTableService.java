@@ -1,8 +1,11 @@
 package school.libenhe.hotel.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
+import school.libenhe.hotel.dao.IDinnerTableDao;
 import school.libenhe.hotel.entity.DinnerTable;
+import school.libenhe.hotel.factory.BeanFactory;
 import school.libenhe.hotel.service.IDinnerTableService;
 
 /**
@@ -13,13 +16,14 @@ import school.libenhe.hotel.service.IDinnerTableService;
  */
 public class DinnerTableService implements IDinnerTableService{
 
+	IDinnerTableDao dinnerTableDao = BeanFactory.getInstance("dinnerTableDao", IDinnerTableDao.class);
 	/* (non-Javadoc)
 	 * @see school.libenhe.hotel.service.IDinnerTableService#add(school.libenhe.hotel.entity.DinnerTable)
 	 */
 	@Override
 	public void add(DinnerTable dt) {
-		// TODO Auto-generated method stub
 		
+		dinnerTableDao.add(dt);
 	}
 
 	/* (non-Javadoc)
@@ -27,7 +31,7 @@ public class DinnerTableService implements IDinnerTableService{
 	 */
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
+		dinnerTableDao.delete(id);
 		
 	}
 
@@ -36,8 +40,8 @@ public class DinnerTableService implements IDinnerTableService{
 	 */
 	@Override
 	public void updata(DinnerTable dt) {
-		// TODO Auto-generated method stub
-		
+
+		dinnerTableDao.updata(dt);
 	}
 
 	/* (non-Javadoc)
@@ -45,8 +49,8 @@ public class DinnerTableService implements IDinnerTableService{
 	 */
 	@Override
 	public List<DinnerTable> query() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return dinnerTableDao.query();
 	}
 
 	/* (non-Javadoc)
@@ -54,8 +58,8 @@ public class DinnerTableService implements IDinnerTableService{
 	 */
 	@Override
 	public DinnerTable findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return dinnerTableDao.findById(id);
 	}
 
 	/* (non-Javadoc)
@@ -63,8 +67,7 @@ public class DinnerTableService implements IDinnerTableService{
 	 */
 	@Override
 	public List<DinnerTable> query(String keyword) {
-		// TODO Auto-generated method stub
-		return null;
+		return dinnerTableDao.query(keyword);
 	}
 
 	/* (non-Javadoc)
@@ -72,7 +75,7 @@ public class DinnerTableService implements IDinnerTableService{
 	 */
 	@Override
 	public void quitTable(int id) {
-		// TODO Auto-generated method stub
+		dinnerTableDao.quitTable(id);
 		
 	}
 
@@ -80,9 +83,21 @@ public class DinnerTableService implements IDinnerTableService{
 	 * @see school.libenhe.hotel.service.IDinnerTableService#changesState(int)
 	 */
 	@Override
-	public DinnerTable changesState(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public DinnerTable changeState(int id) {
+    DinnerTable table = dinnerTableDao.findById(id);
+		
+		int status = table.getTableStatus();
+		if(status==0){
+			status=1;
+			Date date = new Date();
+			table.setOrderDate(date);
+		}else if(status==1){
+			status=0;
+			table.setOrderDate(null);
+		}
+		table.setTableStatus(status);
+		dinnerTableDao.updata(table);
+		return table;
 	}
 
 }
