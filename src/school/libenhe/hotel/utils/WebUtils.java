@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Li Benhe Email: libenhe919@gmail.com
  * @version 2016-3-8 下午12:36:08
  */
-public class WebUtils {
+public  class  WebUtils {
 
 	public static void goTo(HttpServletRequest request,
 			HttpServletResponse response, Object uri) throws ServletException,
