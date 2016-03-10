@@ -15,7 +15,7 @@ ___包括两个部分，前台客户端和后台管理。___
 		    
  
 ___需要导入的jar包：___  
-![jar包](http://github.com/libenhe/hotel/tree/master/READMEimg/jar.jpg)   
+![jar包](https://github.com/libenhe/hotel/blob/master/READMEimg/jar.jpg)   
   
 * 用户前台功能包括：  
   * 选定餐桌
@@ -31,10 +31,9 @@ ___需要导入的jar包：___
     
 ___项目文档结构如图：___  
   
-![jar包](https://github.com/libenhe/hotel/tree/master/READMEimg/project.jpg)  
+![jar包](https://github.com/libenhe/hotel/blob/master/READMEimg/project.jpg)  
     
-	
-  
+
 
 	  
  
