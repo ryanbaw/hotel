@@ -186,7 +186,7 @@ public class FoodDao implements IFoodDao {
 		sb.append("     	ft.typeName");
 		sb.append(" FROM ");
 		sb.append("     	food f,");
-		sb.append("     	foodtype ft");
+		sb.append("     	foodType ft");
 		sb.append(" WHERE 	1=1 ");
 		sb.append("     	AND f.foodType_id=ft.id");
 
@@ -237,7 +237,7 @@ public class FoodDao implements IFoodDao {
 		sb.append("   count(*) ");
 		sb.append(" FROM ");
 		sb.append("     	food f,");
-		sb.append("     	foodtype ft");
+		sb.append("     	foodType ft");
 		sb.append(" WHERE 	1=1 ");
 		sb.append("     	AND f.foodType_id=ft.id");
 

@@ -29,7 +29,7 @@ public class OrderDetailDao implements IOrderDetailDao {
 	@Override
 	public void add(OrderDetail od) {
 
-		String sql = " INSERT orderdetail(orderId,food_id,foodCount) VALUES(?,?,?)";
+		String sql = " INSERT orderDetail(orderId,food_id,foodCount) VALUES(?,?,?)";
 		try {
 			qr.update(sql, od.getOrderId(), od.getFood_id(), od.getFoodCount());
 		} catch (Exception e) {
@@ -45,7 +45,7 @@ public class OrderDetailDao implements IOrderDetailDao {
 	@Override
 	public List<OrderDetail> query() {
 
-		String sql = "SELECT * FROM orderdetail";
+		String sql = "SELECT * FROM orderDetail";
 		try {
 			return qr.query(sql, new BeanListHandler<OrderDetail>(
 					OrderDetail.class));
@@ -62,7 +62,7 @@ public class OrderDetailDao implements IOrderDetailDao {
 	@Override
 	public List<OrderDetail> findByOrderid(int id) {
 
-		String sql = "SELECT * FROM orderdetail where orderId=?";
+		String sql = "SELECT * FROM orderDetail where orderId=?";
 		try {
 			return qr.query(sql, new BeanListHandler<OrderDetail>(
 					OrderDetail.class), id);

@@ -31,7 +31,7 @@ public class DinnerTableDao implements IDinnerTableDao {
 	@Override
 	public void add(DinnerTable dt) {
 
-		String sql = "INSERT dinnertable(tableName) VALUES(?)";
+		String sql = "INSERT dinnerTable(tableName) VALUES(?)";
 		try {
 			qr.update(sql, dt.getTableName());
 		} catch (Exception e) {
@@ -48,7 +48,7 @@ public class DinnerTableDao implements IDinnerTableDao {
 	@Override
 	public void delete(int id) {
 	
-		String sql = "delete from dinnertable where id=?";
+		String sql = "delete from dinnerTable where id=?";
 		try {
 			qr.update(sql, id);
 		} catch (Exception e) {
@@ -67,7 +67,7 @@ public class DinnerTableDao implements IDinnerTableDao {
 	@Override
 	public void updata(DinnerTable dt) {
 	
-		String sql = "UPDATE dinnertable SET tableStatus=?,orderDate=? WHERE id=?";
+		String sql = "UPDATE dinnerTable SET tableStatus=?,orderDate=? WHERE id=?";
 		Date date = dt.getOrderDate();
 		try {
 			JdbcUtils.getQueryRunner().update(sql, dt.getTableStatus(),date,dt.getId());
@@ -85,7 +85,7 @@ public class DinnerTableDao implements IDinnerTableDao {
 	@Override
 	public List<DinnerTable> query() {
 		
-		String sql = "select * from dinnertable";
+		String sql = "select * from dinnerTable";
 		try {
 			return qr.query(sql, new BeanListHandler<DinnerTable>(DinnerTable.class));
 		} catch (Exception e) {
@@ -102,7 +102,7 @@ public class DinnerTableDao implements IDinnerTableDao {
 	@Override
 	public DinnerTable findById(int id) {
 		
-		String sql = "select * from dinnertable where id=?";
+		String sql = "select * from dinnerTable where id=?";
 		try {
 			return qr.query(sql, new BeanHandler<DinnerTable>(DinnerTable.class),id);
 		} catch (Exception e) {
@@ -119,7 +119,7 @@ public class DinnerTableDao implements IDinnerTableDao {
 	@Override
 	public List<DinnerTable> query(String keyword) {
 
-		String sql = "SELECT * FROM dinnertable WHERE tableName LIKE ?";
+		String sql = "SELECT * FROM dinnerTable WHERE tableName LIKE ?";
 		try {
 			return qr.query(sql, new BeanListHandler<DinnerTable>(DinnerTable.class),"%"+keyword +"%");
 		} catch (Exception e) {
@@ -136,7 +136,7 @@ public class DinnerTableDao implements IDinnerTableDao {
 	@Override
 	public void quitTable(int id) {
 		
-		String sql = "UPDATE dinnertable SET tableStatus=?,orderDate=? WHERE id=?";
+		String sql = "UPDATE dinnerTable SET tableStatus=?,orderDate=? WHERE id=?";
 		try {
 			JdbcUtils.getQueryRunner().update(sql,0,null,id);
 		} catch (Exception e) {

@@ -25,7 +25,7 @@ public class FoodTypeDao implements IFoodTypeDao{
 	@Override
 	public void add(FoodType foodtype) {
 
-		String sql ="INSERT INTO foodtype(typeName) VALUES(?);";
+		String sql ="INSERT INTO foodType(typeName) VALUES(?);";
 		try {
 			qr.update(sql, foodtype.getTypeName());
 		} catch (Exception e) {
@@ -39,7 +39,7 @@ public class FoodTypeDao implements IFoodTypeDao{
 	@Override
 	public void delete(int id) {
 
-		String sql ="DELETE FROM foodtype WHERE id=?";
+		String sql ="DELETE FROM foodType WHERE id=?";
 		try {
 			qr.update(sql,id);
 		} catch (Exception e) {
@@ -53,7 +53,7 @@ public class FoodTypeDao implements IFoodTypeDao{
 	@Override
 	public void updata(FoodType foodtype) {
 	
-		String sql ="UPDATE foodtype SET typeName=? WHERE id =?";
+		String sql ="UPDATE foodType SET typeName=? WHERE id =?";
 		try {
 			qr.update(sql,foodtype.getTypeName(),foodtype.getId());
 		} catch (Exception e) {
@@ -68,7 +68,7 @@ public class FoodTypeDao implements IFoodTypeDao{
 	@Override
 	public List<FoodType> query() {
 
-		String sql ="SELECT * FROM foodtype";
+		String sql ="SELECT * FROM foodType";
 		try {
 			return  qr.query(sql,new BeanListHandler<FoodType>(FoodType.class));
 		} catch (Exception e) {
@@ -100,7 +100,7 @@ public class FoodTypeDao implements IFoodTypeDao{
 	@Override
 	public Integer getFirstType() {
 		try {
-			String sql = "select * from foodtype";
+			String sql = "select * from foodType";
 			return qr.query(sql, new ScalarHandler<Integer>());
 		} catch (Exception e) {
 			throw new RuntimeException(e);

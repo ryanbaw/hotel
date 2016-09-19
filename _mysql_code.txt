@@ -52,7 +52,7 @@ CREATE TABLE orderDetail(
 -- 添加菜品与菜类别的关系约束
 ALTER TABLE food ADD CONSTRAINT fk_food_foodType_id FOREIGN KEY(foodType_id) REFERENCES foodType(id);
 -- 订单表： 与餐桌表的关系
-ALTER TABLE orders ADD CONSTRAINT order_table_id FOREIGN KEY(table_id) REFERENCES dinnertable(id);
+ALTER TABLE orders ADD CONSTRAINT order_table_id FOREIGN KEY(table_id) REFERENCES dinnerTable(id);
 -- 订单明细： 与订单表的关系
 ALTER TABLE orderDetail ADD CONSTRAINT orderDetail_order_id FOREIGN KEY(orderId) REFERENCES orders(id);
 -- 订单明细： 与菜信息的关系
