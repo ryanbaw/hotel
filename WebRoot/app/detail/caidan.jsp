@@ -46,30 +46,20 @@
 			
 			<!-- 底部分页导航条div -->
 			<div id="foot">
-				
-						<span
-							style="float:left; line-height:53PX; margin-left:-50px; font-weight:bold; ">
-							<span style="font-weight:bold">&lt;&lt;</span>
-						</span>
+				<span style="float:left; line-height:53PX; margin-left:-50px; font-weight:bold; ">
+					<span style="font-weight:bold">&lt;&lt;</span>
+				</span>
 					
 				当前${requestScope.pageBean.currentPage }/${requestScope.pageBean.totalPage }页     &nbsp;&nbsp;
-		<a href="${pageContext.request.contextPath }/index?method=getMenu&currentPage=1">首页</a>
-		<a href="${pageContext.request.contextPath }/index?method=getMenu&currentPage=${requestScope.pageBean.currentPage-1}">上一页 </a>
-		<a href="${pageContext.request.contextPath }/index?method=getMenu&currentPage=${requestScope.pageBean.currentPage+1}">下一页 </a>
-		<a href="${pageContext.request.contextPath }/index?method=getMenu&currentPage=${requestScope.pageBean.totalPage}">末页</a>
-				
-				
-					
-						<span style="float:right; line-height:53px; margin-right:10px;  ">
-							<a
-							href="#"
-							style=" text-decoration:none;color:#000000; font-weight:bold">&gt;&gt;</a>
-						</span>
-					
-					
-				
+				<a href="${pageContext.request.contextPath }/index?method=getMenu&currentPage=1">首页</a>
+				<a href="${pageContext.request.contextPath }/index?method=getMenu&currentPage=${requestScope.pageBean.currentPage-1}">上一页 </a>
+				<a href="${pageContext.request.contextPath }/index?method=getMenu&currentPage=${requestScope.pageBean.currentPage+1}">下一页 </a>
+				<a href="${pageContext.request.contextPath }/index?method=getMenu&currentPage=${requestScope.pageBean.totalPage}">末页</a>
+
+				<span style="float:right; line-height:53px; margin-right:10px;  ">
+					<a href="#" style=" text-decoration:none;color:#000000; font-weight:bold">&gt;&gt;</a>
+				</span>
 			</div>
-			
 		</div>
 
 		<!-- 右边菜系列表，菜品搜索框  -->
@@ -118,7 +108,6 @@
 				</form>
 			</div>
 		</div>
-		
 	</div>
 </body>
 </html>
